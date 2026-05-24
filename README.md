@@ -1,15 +1,20 @@
-# Austin Knapp - Personal Website
+# Dylan B. Knapp - Personal Website
 
-Premium one-page portfolio built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+Personal portfolio for Dylan B. Knapp, built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Overview
+
+This site presents Dylan as a high school student, app developer, and student entrepreneur. It highlights RepQuest, Sequoia Apps LLC, client web work, education, leadership, and contact information.
 
 ## Tech Stack
+
 - Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS v4
 - Framer Motion
-- `next/image`
 
 ## Run Locally
+
 ```bash
 npm install
 npm run dev
@@ -18,21 +23,18 @@ npm run dev
 Open `http://localhost:3000`.
 
 ## Build for Production
+
 ```bash
 npm run build
 npm start
 ```
 
-## Deployment Notes (Railway / Vercel)
-- This repo is deployment-ready as a standard Next.js app.
-- Build command: `npm run build`
-- Start command: `npm start`
-- Ensure `NODE_ENV=production` in production environments.
-
 ## Project Structure
+
 ```text
 app/
   globals.css
+  icon.tsx
   layout.tsx
   opengraph-image.tsx
   page.tsx
@@ -55,11 +57,12 @@ components/
   Timeline.tsx
 public/
   profile-grid.svg
-  resume.pdf
 ```
 
-## Content Updates
-- Main content data is in `app/page.tsx`.
-- Site-wide metadata is in `app/layout.tsx`.
-- Visual theme tokens and motion styling are in `app/globals.css`.
-- Recruiter-focused sections include snapshot, technical evidence, and FAQ blocks.
+## Content Locations
+
+- Main page content lives in `app/page.tsx`.
+- Site metadata and SEO live in `app/layout.tsx`.
+- Open Graph and Twitter image routes live in `app/opengraph-image.tsx` and `app/twitter-image.tsx`.
+- The favicon is generated in `app/icon.tsx`.
+- Visual theme and motion styling live in `app/globals.css`.

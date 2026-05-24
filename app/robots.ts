@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://austinknapp.com/sitemap.xml",
+    sitemap: "https://dylanknapp.com/sitemap.xml",
   };
 }

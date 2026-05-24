@@ -15,48 +15,48 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://austinknapp.com"),
-  title: "Austin Knapp | AI & Data Engineer | Founder",
+  metadataBase: new URL("https://dylanknapp.com"),
+  title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
   description:
-    "Personal website of Austin Knapp, an AI and data engineer building ML systems, SaaS products, and production data pipelines.",
+    "Personal website of Dylan B. Knapp, a high school student, app developer, and student entrepreneur building digital products and fitness tech.",
   keywords: [
-    "Austin Knapp",
-    "AI Engineer",
-    "Data Engineer",
-    "Machine Learning Engineer",
-    "TypeScript",
-    "Python",
-    "SaaS",
-    "Data Pipelines",
+    "Dylan B. Knapp",
+    "Dylan Knapp",
+    "RepQuest",
+    "Sequoia Apps",
+    "App Developer",
+    "Student Entrepreneur",
+    "React Native",
+    "Supabase",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Austin Knapp | AI & Data Engineer | Founder",
+    title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
     description:
-      "Personal website of Austin Knapp, focused on AI systems, SaaS products, and production data work.",
-    url: "https://austinknapp.com",
-    siteName: "Austin Knapp",
+      "Personal website of Dylan B. Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
+    url: "https://dylanknapp.com",
+    siteName: "Dylan B. Knapp",
     type: "website",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Austin Knapp - AI & Data Engineer | Founder",
+        alt: "Dylan B. Knapp - Founder of RepQuest | App Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Austin Knapp | AI & Data Engineer | Founder",
+    title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
     description:
-      "Personal website of Austin Knapp, focused on AI systems, SaaS products, and production data work.",
+      "Personal website of Dylan B. Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
     images: ["/twitter-image"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon",
   },
 };
 

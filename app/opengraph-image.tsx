@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-export const alt = "Austin Knapp - AI & Data Engineer | Founder";
+export const alt = "Dylan B. Knapp - Founder of RepQuest | App Developer";
 export const size = {
   width: 1200,
   height: 630,
@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
             color: "rgba(255,255,255,0.72)",
           }}
         >
-          Austin Knapp
+          Dylan B. Knapp
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
@@ -43,10 +43,10 @@ export default function OpenGraphImage() {
               maxWidth: 980,
             }}
           >
-            AI &amp; Data Engineer | Founder
+            Founder of RepQuest | App Developer | Student Entrepreneur
           </div>
           <div style={{ fontSize: 30, color: "rgba(255,255,255,0.72)" }}>
-            Building ML systems, SaaS platforms, and data pipelines that ship.
+            Building apps, websites, and digital products with a focus on real users.
           </div>
         </div>
       </div>

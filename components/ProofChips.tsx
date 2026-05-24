@@ -108,12 +108,12 @@ export default function ProofChips({ chips }: ProofChipsProps) {
           Quick Proof
         </p>
         <h3 className="mt-3 max-w-sm text-3xl leading-tight font-semibold tracking-tight text-white sm:text-[2.4rem] [font-family:var(--font-fraunces)]">
-          Signal, not filler.
+          Built around real work.
         </h3>
         <p className="mt-4 max-w-md text-sm leading-7 text-[var(--muted)] sm:text-base">
-          A few fast indicators of the kind of work I actually do: product
-          architecture, production ML, real traffic, and a stack that spans
-          backend, data, and delivery.
+          A few fast indicators of the kind of work featured here: launched
+          products, real users, active ventures, and technical range that
+          already goes beyond classroom projects.
         </p>
 
         <div className="mt-7 flex items-center gap-3">

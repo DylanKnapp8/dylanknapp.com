@@ -19,28 +19,28 @@ import Timeline, { type TimelineItem } from "@/components/Timeline";
 
 const proofChips: ProofItem[] = [
   {
-    label: "Traffic",
-    value: "1,000,000+",
-    note: "annual page views supported across deployed work",
-    icon: "traffic",
-  },
-  {
-    label: "Product",
-    value: "Multi-tenant SaaS",
-    note: "built from scratch with auth, workflows, onboarding, and billing",
+    label: "Users",
+    value: "4,000+",
+    note: "RepQuest users and downloads from an app built and launched independently",
     icon: "product",
   },
   {
-    label: "ML Delivery",
-    value: "Forecasting + automation",
-    note: "production pipelines designed for recurring operational use",
+    label: "Founder",
+    value: "2 ventures",
+    note: "building RepQuest and co-founding Sequoia Apps LLC while still in high school",
+    icon: "traffic",
+  },
+  {
+    label: "Stack",
+    value: "React Native + Supabase",
+    note: "shipping across app development, backend systems, and product-focused UI work",
     icon: "ml",
     compact: true,
   },
   {
-    label: "Core Stack",
-    value: "Python / SQL / TypeScript / Node.js",
-    note: "comfortable across backend systems, data work, and product delivery",
+    label: "Leadership",
+    value: "Captain + VP",
+    note: "varsity lacrosse captain and vice president of the computer science club",
     icon: "stack",
     compact: true,
   },
@@ -48,220 +48,215 @@ const proofChips: ProofItem[] = [
 
 const capabilities = [
   {
-    title: "AI + ML Systems",
+    title: "App Development",
     summary:
-      "Designing practical forecasting and automation workflows that integrate into production operations.",
-    tools: ["Python", "Forecasting", "Model Evaluation", "XGBoost"],
+      "Building mobile app experiences with gamification, onboarding, analytics, and repeatable product systems.",
+    tools: ["React Native", "Expo", "Supabase", "Product Design"],
   },
   {
-    title: "Data Engineering",
+    title: "Web Development",
     summary:
-      "Building structured pipelines for ingestion, transformation, and repeatable reporting at scale.",
-    tools: ["SQL", "Data Pipelines", "Excel VBA", "Automation"],
+      "Designing and shipping polished websites for products, brands, and client-facing digital experiences.",
+    tools: ["Next.js", "React", "Responsive UI", "Frontend Systems"],
   },
   {
-    title: "SaaS Architecture",
+    title: "Backend Integration",
     summary:
-      "Shipping multi-tenant products with role-based workflows, onboarding, and monetization layers.",
-    tools: ["TypeScript", "Node.js", "Supabase", "Stripe"],
+      "Connecting product interfaces to auth, databases, rankings, subscriptions, and operational workflows.",
+    tools: ["Supabase", "APIs", "Auth", "Data Modeling"],
   },
   {
-    title: "Analytics Delivery",
+    title: "Entrepreneurial Execution",
     summary:
-      "Turning data into decision-ready insights through dashboards, KPI tracking, and business reporting.",
-    tools: ["Tableau", "Power BI", "Excel", "APIs"],
+      "Moving from idea to launch with product strategy, outreach, growth experiments, and day-to-day iteration.",
+    tools: ["Product Strategy", "Client Outreach", "Launches", "Iteration"],
   },
 ];
 
 const projects: Project[] = [
   {
-    title: "RentPad AI",
-    subtitle: "Multi-tenant AI property management SaaS",
+    title: "RepQuest",
+    subtitle: "Gamified fitness tracking app",
     summary:
-      "Founder-led product build spanning architecture, onboarding, pricing, and the day-to-day workflows landlords and tenants actually need.",
+      "A fitness app built to make training more competitive and engaging through rankings, XP, streaks, workout logging, and performance tracking.",
     bullets: [
-      "Built and architected a multi-tenant platform supporting landlord and tenant workflows",
-      "Designed onboarding and pricing; piloted with 8 landlords and property owners",
-      "Structured shared services for auth, billing, and notifications with Supabase and Stripe",
+      "Built and launched the app to 4,000+ users and downloads",
+      "Created rankings, nutrition, personal records, muscle analytics, and onboarding flows",
+      "Developed premium subscriptions, growth assets, and backend systems with Supabase",
     ],
     impact:
-      "This is the clearest example of end-to-end ownership across product decisions, system design, and shipping a real SaaS experience.",
-    stack: ["TypeScript", "Node.js", "Supabase", "Railway", "Stripe"],
+      "RepQuest is the clearest example of full product ownership: concept, build, launch, iteration, analytics, and monetization.",
+    stack: ["React Native", "Expo", "Supabase", "Subscriptions"],
     detailsButtonLabel: "Details",
   },
   {
-    title: "Motor Intelligence",
-    subtitle: "ML estimation + incentive forecasting automation",
+    title: "Sequoia Apps",
+    subtitle: "Software and web development company",
     summary:
-      "Production-facing forecasting and process automation work built around recurring OEM incentive estimation and monthly operational workflows.",
+      "A company focused on building websites, apps, and digital products for real clients and new ventures.",
     bullets: [
-      "Automated OEM incentive forecasting with a machine-learning estimation approach",
-      "Scaled monthly processing with Excel VBA automation pipelines integrated with cloud workflows",
-      "Built a repeatable monthly estimation and reporting workflow instead of one-off manual runs",
+      "Co-founded Sequoia Apps LLC and developed sites including sequoiaapps.com and feedingthenrv.com",
+      "Handled design, development, and client-facing communication across multiple projects",
+      "Used the business as a platform to learn product delivery, sales outreach, and execution",
     ],
     impact:
-      "Shows applied ML in a business setting where the work has to be usable, repeatable, and reliable inside real operating constraints.",
-    stack: ["Python", "Excel VBA", "Forecasting", "Data Pipelines"],
+      "Sequoia Apps shows the business side of the work: shipping for real users, communicating clearly, and turning technical skill into delivered products.",
+    stack: ["Web Development", "UI Design", "Client Delivery", "Outreach"],
+    links: [{ label: "Visit Site", href: "https://sequoiaapps.com" }],
   },
   {
-    title: "NexStratus",
-    subtitle: "Early-warning ML system for healthcare supply-chain risk",
+    title: "feedingtheNRV.com",
+    subtitle: "Website project delivered through Sequoia Apps",
     summary:
-      "Capstone early-warning system focused on turning healthcare supply-chain signals into earlier, more actionable risk visibility.",
+      "A live website project that reflects the kind of design and development work I build through Sequoia Apps.",
     bullets: [
-      "Detected supply-chain risk up to 72 hours in advance",
-      "Built an end-to-end analytics pipeline with feature engineering and model evaluation",
-      "Framed the system around earlier detection of disruption signals rather than retrospective reporting",
+      "Planned and built the site as part of a client-facing web delivery workflow",
+      "Focused on clean layout, performance, and a professional presentation",
+      "Used the project to strengthen repeatable website design and launch processes",
     ],
     impact:
-      "A strong end-to-end ML example: problem framing, feature engineering, evaluation, and output designed for actual decisions.",
-    stack: ["Python", "XGBoost", "Evaluation", "GitHub"],
+      "This project highlights applied web delivery work rather than a classroom mockup: real scope, real constraints, and a shipped result.",
+    stack: ["Web Development", "Responsive Design", "Launch Support"],
+    links: [{ label: "Visit Site", href: "https://feedingthenrv.com" }],
   },
 ];
 
 const evidenceRows = [
   {
-    capability: "Multi-tenant SaaS Architecture",
+    capability: "Product Build and Launch",
     evidence:
-      "RentPad AI: built and architected a multi-tenant platform for landlord and tenant workflows, plus onboarding and pricing design.",
-    stack: ["TypeScript", "Node.js", "Supabase", "Stripe"],
+      "RepQuest: built a consumer app around workout rankings, XP, streaks, personal records, and progress tracking, then launched it to 4,000+ users.",
+    stack: ["React Native", "Expo", "Supabase", "Subscriptions"],
   },
   {
-    capability: "ML Forecasting Automation",
+    capability: "Backend and Data Work",
     evidence:
-      "Motor Intelligence: automated OEM incentive forecasting with a machine-learning estimation approach.",
-    stack: ["Python", "Forecasting", "Automation"],
+      "RepQuest and Sequoia Apps: set up backend infrastructure with Supabase for authentication, data storage, and product features.",
+    stack: ["Supabase", "Backend Integration", "APIs"],
   },
   {
-    capability: "Operational Pipeline Scaling",
+    capability: "Client-Facing Web Delivery",
     evidence:
-      "Motor Intelligence: scaled monthly processing using Excel VBA automation pipelines integrated with cloud workflows.",
-    stack: ["Excel VBA", "Data Pipelines", "Cloud Workflows"],
+      "Sequoia Apps: designed and delivered multiple websites, including sequoiaapps.com and feedingthenrv.com.",
+    stack: ["Web Development", "UI Design", "Client Projects"],
   },
   {
-    capability: "End-to-End Analytics and Evaluation",
+    capability: "Founder Mindset",
     evidence:
-      "NexStratus: built feature engineering and model evaluation pipeline that detected supply-chain risk up to 72 hours in advance.",
-    stack: ["Python", "XGBoost", "Model Evaluation"],
+      "Built products while balancing school, leadership, and outreach, with a focus on solving real problems instead of shipping portfolio filler.",
+    stack: ["Execution", "Problem Solving", "Entrepreneurship"],
   },
 ];
 
 const timelineItems: TimelineItem[] = [
   {
-    company: "Motor Intelligence",
-    role: "Data and AI Insights Analyst",
-    date: "May 2024 - Present",
+    company: "Wayne Hills High School",
+    role: "Student",
+    date: "Expected Graduation: June 2027 | GPA: 4.45/4",
   },
   {
-    company: "RentPad AI",
-    role: "Co-Founder & CEO",
-    date: "Nov 2024 - Present",
+    company: "Sequoia Apps LLC",
+    role: "Co-founder",
+    date: "June 2025 - Present",
   },
   {
-    company: "Sequoia Apps",
-    role: "Founder & Lead Developer",
-    date: "Jul 2025 - Present",
+    company: "RepQuest - Ranked Gym",
+    role: "Founder & Developer",
+    date: "2025 - Present",
   },
   {
-    company: "NexStratus",
-    role: "Capstone Project Team Lead",
-    date: "Oct 2025 - Present",
+    company: "Wayne Hills Varsity Lacrosse",
+    role: "Captain",
+    date: "Leadership and team development",
   },
   {
-    company: "Feeding The NRV",
-    role: "Founding Member & Director of Digital Strategy",
-    date: "Feb 2024 - Present",
+    company: "Computer Science Club",
+    role: "Vice President",
+    date: "Student leadership and technical community building",
   },
 ];
 
 const skillGroups = [
   {
     title: "Languages",
-    items: ["Python", "SQL", "JavaScript", "TypeScript"],
+    items: ["Java", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    title: "Backend + Product",
-    items: ["Node.js", "APIs", "Multi-tenant SaaS", "Stripe"],
+    title: "App + Product",
+    items: ["React Native", "Expo", "UI/UX Design", "Product Thinking"],
   },
   {
-    title: "Data + ML",
+    title: "Backend + Integration",
     items: [
-      "Forecasting",
-      "Feature Engineering",
-      "Model Evaluation",
-      "Automation Pipelines",
+      "Supabase",
+      "API Integration",
+      "Backend Integration",
+      "Technical Troubleshooting",
     ],
   },
   {
-    title: "Platforms + Analytics",
+    title: "Delivery + Growth",
     items: [
-      "Supabase",
-      "Railway",
-      "Linux",
-      "GitHub",
-      "Tableau",
-      "Power BI",
-      "Excel",
-      "VBA",
+      "Version Control",
+      "Problem Solving",
+      "Social Media Management",
+      "Content Creation",
     ],
   },
 ];
 
 const principles = [
-  "Design the architecture and data flow before implementation.",
-  "Ship for production constraints: performance, reliability, and maintainability.",
-  "Automate repetitive workflows and remove manual operational overhead.",
-  "Tie technical output back to business impact and measurable outcomes.",
+  "Build real products with clear user value instead of one-off demos.",
+  "Keep the product experience simple, competitive, and easy to understand.",
+  "Treat backend, design, and growth as connected parts of the same product.",
+  "Learn quickly, ship consistently, and improve through iteration.",
 ];
 
 const recruiterFAQ = [
   {
-    question: "How can I evaluate technical depth if the code is private?",
+    question: "What are you building right now?",
     answer:
-      "You can review project architecture details here and request a walkthrough focused on design decisions, tradeoffs, and delivery constraints.",
+      "Most of my current work centers on RepQuest, Sequoia Apps, and building digital products that combine good UX with strong backend foundations.",
   },
   {
-    question: "What kinds of roles are the best fit?",
+    question: "What kinds of opportunities are the best fit?",
     answer:
-      "AI engineering, data engineering, operations automation engineer, and startup roles where technical ownership spans architecture through shipping.",
+      "I am especially interested in app development, software engineering, startup environments, and opportunities where I can keep learning by building real products.",
   },
   {
     question: "What is the fastest way to reach out?",
     answer:
-      "Email austinknapp155@gmail.com with role context and timeline. LinkedIn outreach is also active.",
+      "Email dylanknapp8888@gmail.com with context about the project, role, or collaboration idea. LinkedIn is also available if you prefer to connect there.",
   },
   {
-    question: "Why are some project details intentionally limited?",
+    question: "What makes your work different from a typical student portfolio?",
     answer:
-      "Most production work is under NDA, so this portfolio emphasizes system scope, outcomes, and stack decisions without exposing private implementation.",
+      "I focus on products that are launched, used, and improved over time. The goal is not just to build projects, but to learn how to create software people actually want to keep using.",
   },
 ];
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Austin Knapp",
-  url: "https://austinknapp.com",
-  jobTitle: "AI & Data Engineer | Founder",
-  email: "mailto:austinknapp155@gmail.com",
-  sameAs: [
-    "https://linkedin.com/in/austinknapp15",
-    "https://github.com/deej8888",
-  ],
+  name: "Dylan B. Knapp",
+  url: "https://dylanknapp.com",
+  jobTitle: "Founder of RepQuest | App Developer | Student Entrepreneur",
+  email: "mailto:dylanknapp8888@gmail.com",
+  sameAs: ["https://www.linkedin.com/in/dylan-knapp-103603395/"],
   knowsAbout: [
-    "Machine Learning",
-    "Data Engineering",
-    "SaaS Architecture",
-    "Forecasting",
-    "Automation Pipelines",
-    "TypeScript",
-    "Python",
-    "SQL",
+    "App Development",
+    "Entrepreneurship",
+    "Software Engineering",
+    "Web Development",
+    "Fitness Tech",
+    "React Native",
+    "Expo",
+    "Supabase",
   ],
 };
 
 export default function Home() {
-  const [isRentPadOpen, setIsRentPadOpen] = useState(false);
+  const [isRepQuestOpen, setIsRepQuestOpen] = useState(false);
 
   return (
     <div className="mono-bg min-h-screen">
@@ -278,6 +273,87 @@ export default function Home() {
       <main>
         <Hero />
 
+        <Section id="about" title="About Dylan" eyebrow="About">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <article className="card-premium p-6 sm:p-7">
+              <p className="max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+                I am a high school student at Wayne Hills High School with a
+                strong interest in app development, entrepreneurship, and
+                software engineering. I built and launched RepQuest, a gamified
+                fitness tracking app with thousands of users, and I also
+                co-founded Sequoia Apps LLC, where I work on websites, apps,
+                and digital products. I enjoy building real products, learning
+                new technologies, and solving problems through software.
+              </p>
+            </article>
+
+            <article className="card-premium p-6 sm:p-7">
+              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
+                Education
+              </p>
+              <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
+                Wayne Hills High School
+              </h3>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                Wayne, New Jersey
+              </p>
+              <div className="mt-5 space-y-2 text-sm text-[var(--muted)]">
+                <p>Expected Graduation: June 2027</p>
+                <p>GPA: 4.45/4</p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <article className="card-premium p-6">
+              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
+                Honors
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                {[
+                  "High Honor Roll",
+                  "National Honor Society",
+                  "Spanish National Honor Society",
+                ].map((honor) => (
+                  <li key={honor} className="flex items-start gap-2">
+                    <span
+                      aria-hidden
+                      className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/70"
+                    />
+                    <span>{honor}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="card-premium p-6">
+              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
+                Activities and Leadership
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                {[
+                  "Captain of the lacrosse team",
+                  "Varsity lacrosse",
+                  "Vice President of the Computer Science Club",
+                  "National Honor Society",
+                  "Spanish National Honor Society",
+                  "Spanish Club",
+                  "Engineering Club",
+                  "Red Cross Club",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span
+                      aria-hidden
+                      className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/70"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </Section>
+
         <Section id="projects" title="Selected Work" eyebrow="Projects">
           <div className="grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (
@@ -285,8 +361,8 @@ export default function Home() {
                 key={project.title}
                 project={project}
                 onOpenDetails={
-                  project.title === "RentPad AI"
-                    ? () => setIsRentPadOpen(true)
+                  project.title === "RepQuest"
+                    ? () => setIsRepQuestOpen(true)
                     : undefined
                 }
               />
@@ -332,8 +408,8 @@ export default function Home() {
       </main>
 
       <ProjectModal
-        isOpen={isRentPadOpen}
-        onClose={() => setIsRentPadOpen(false)}
+        isOpen={isRepQuestOpen}
+        onClose={() => setIsRepQuestOpen(false)}
       />
     </div>
   );

@@ -9,6 +9,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
@@ -141,7 +142,7 @@ export default function Navbar() {
             Personal Website
           </span>
           <span className="mt-1 text-sm font-semibold tracking-[0.2em] text-white uppercase">
-            Austin Knapp
+            Dylan B. Knapp
           </span>
         </a>
 

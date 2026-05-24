@@ -40,7 +40,7 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-labelledby="rentpad-title"
+            aria-labelledby="repquest-title"
             className="w-full max-w-4xl rounded-2xl border border-white/15 bg-[rgba(10,10,11,0.97)] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.58)] sm:p-8"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -51,13 +51,13 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
             <div className="mb-6 flex items-start justify-between gap-3">
               <div>
                 <h3
-                  id="rentpad-title"
+                  id="repquest-title"
                   className="text-2xl font-semibold tracking-tight text-white"
                 >
-                  RentPad AI Details
+                  RepQuest Details
                 </h3>
                 <p className="mt-1 text-sm text-white/70">
-                  Multi-tenant AI property management SaaS
+                  Gamified fitness tracking app
                 </p>
               </div>
               <button
@@ -76,14 +76,14 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                   Overview
                 </h4>
                 <p className="mt-3 text-sm text-[var(--muted)]">
-                  RentPad AI is a multi-tenant product focused on landlord and
-                  tenant workflows, with onboarding and pricing designed for
-                  fast pilot launches.
+                  RepQuest is a mobile app built to make training more engaging
+                  through competition, progression systems, and clear workout
+                  tracking.
                 </p>
                 <p className="mt-2 text-sm text-[var(--muted)]">
-                  The platform architecture separates tenant data at the account
-                  level while keeping shared services for authentication,
-                  billing, and notifications.
+                  The product combines gamification, fitness data, onboarding,
+                  subscriptions, and analytics into a single app experience
+                  designed for everyday gym users.
                 </p>
               </section>
 
@@ -93,19 +93,19 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                 </h4>
                 <div className="mt-4 space-y-3">
                   <div className="flex flex-wrap items-center justify-center gap-2 text-white/45">
-                    <div className="architecture-node">Landlord + Tenant UI</div>
+                    <div className="architecture-node">Expo Mobile App</div>
                     <span aria-hidden>-&gt;</span>
-                    <div className="architecture-node">Node.js API Layer</div>
+                    <div className="architecture-node">App Logic + Rankings</div>
                     <span aria-hidden>-&gt;</span>
-                    <div className="architecture-node">Supabase + Stripe</div>
+                    <div className="architecture-node">Supabase Backend</div>
                   </div>
                   <div className="flex flex-wrap items-center justify-center gap-2 text-white/45">
-                    <div className="architecture-node">Auth + Roles</div>
+                    <div className="architecture-node">Workout Logging</div>
                     <span aria-hidden>-&gt;</span>
-                    <div className="architecture-node">Workflow Engine</div>
+                    <div className="architecture-node">XP + Streak Systems</div>
                     <span aria-hidden>-&gt;</span>
                     <div className="architecture-node">
-                      Billing + Notifications
+                      Analytics + Subscriptions
                     </div>
                   </div>
                 </div>
@@ -113,15 +113,19 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
 
               <section>
                 <h4 className="text-sm font-semibold tracking-[0.12em] text-white/78 uppercase">
-                  Screenshots
+                  Product Highlights
                 </h4>
                 <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                  {["screen-1", "screen-2", "screen-3"].map((slot) => (
+                  {[
+                    "4,000+ users and downloads",
+                    "Ranks, XP, streaks, and progress tracking",
+                    "Built with React Native, Expo, and Supabase",
+                  ].map((item) => (
                     <div
-                      key={slot}
-                      className="h-32 overflow-hidden rounded-xl border border-white/10 bg-white/5"
+                      key={item}
+                      className="flex h-32 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-5 text-center text-sm text-white/75"
                     >
-                      <div className="h-full w-full animate-pulse bg-gradient-to-br from-white/12 to-transparent" />
+                      {item}
                     </div>
                   ))}
                 </div>
