@@ -29,9 +29,9 @@ export default function Section({
     >
       <div className="container-shell">
         {(eyebrow || title) && (
-          <header className="mb-8 space-y-2">
+          <header className="section-heading mb-8 space-y-2">
             {eyebrow ? (
-              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
+              <p className="section-eyebrow text-xs font-medium uppercase">
                 {eyebrow}
               </p>
             ) : null}

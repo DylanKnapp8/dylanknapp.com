@@ -10,9 +10,9 @@ type SkillsProps = {
 
 export default function Skills({ groups, principles }: SkillsProps) {
   return (
-    <div className="grid gap-6 xl:grid-cols-[1.35fr_1fr]">
+    <div className="grid gap-6 xl:grid-cols-[1.4fr_0.95fr]">
       <div className="card-premium p-6 sm:p-7">
-        <h3 className="text-lg font-semibold text-white">Skill Matrix</h3>
+        <h3 className="text-lg font-semibold text-white">Tools</h3>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {groups.map((group) => (
             <article
@@ -33,7 +33,7 @@ export default function Skills({ groups, principles }: SkillsProps) {
       </div>
 
       <div className="card-premium p-6 sm:p-7">
-        <h3 className="text-lg font-semibold text-white">How I Operate</h3>
+        <h3 className="text-lg font-semibold text-white">Working Style</h3>
         <ol className="mt-4 space-y-3">
           {principles.map((principle, index) => (
             <li

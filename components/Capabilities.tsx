@@ -14,7 +14,7 @@ type CapabilitiesProps = {
 
 export default function Capabilities({ items }: CapabilitiesProps) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-4 lg:grid-cols-2">
       {items.map((item, index) => (
         <motion.article
           key={item.title}
@@ -24,10 +24,13 @@ export default function Capabilities({ items }: CapabilitiesProps) {
           transition={{ duration: 0.35, delay: index * 0.05, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.35 }}
         >
+          <p className="text-[0.66rem] font-semibold tracking-[0.2em] text-white/46 uppercase">
+            Capability
+          </p>
           <h3 className="text-lg font-semibold tracking-tight text-white">
             {item.title}
           </h3>
-          <p className="mt-2 text-sm text-[var(--muted)]">{item.summary}</p>
+          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{item.summary}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {item.tools.map((tool) => (
               <span key={tool} className="tag">

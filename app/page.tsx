@@ -8,43 +8,12 @@ import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import InteractionEffects from "@/components/InteractionEffects";
 import Navbar from "@/components/Navbar";
-import ProofChips, { type ProofItem } from "@/components/ProofChips";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ProjectModal from "@/components/ProjectModal";
-import RecruiterFAQ from "@/components/RecruiterFAQ";
 import Section from "@/components/Section";
 import Skills from "@/components/Skills";
 import SkillsEvidence from "@/components/SkillsEvidence";
 import Timeline, { type TimelineItem } from "@/components/Timeline";
-
-const proofChips: ProofItem[] = [
-  {
-    label: "Users",
-    value: "4,000+",
-    note: "RepQuest users and downloads from an app built and launched independently",
-    icon: "product",
-  },
-  {
-    label: "Founder",
-    value: "2 ventures",
-    note: "building RepQuest and co-founding Sequoia Apps LLC while still in high school",
-    icon: "traffic",
-  },
-  {
-    label: "Stack",
-    value: "React Native + Supabase",
-    note: "shipping across app development, backend systems, and product-focused UI work",
-    icon: "ml",
-    compact: true,
-  },
-  {
-    label: "Leadership",
-    value: "Captain + VP",
-    note: "varsity lacrosse captain and vice president of the computer science club",
-    icon: "stack",
-    compact: true,
-  },
-];
 
 const capabilities = [
   {
@@ -80,14 +49,14 @@ const projects: Project[] = [
     summary:
       "A fitness app built to make training more competitive and engaging through rankings, XP, streaks, workout logging, and performance tracking.",
     bullets: [
-      "Built and launched the app to 4,000+ users and downloads",
+      "Built and launched the app to 4,000+ users/downloads on the App Store",
       "Created rankings, nutrition, personal records, muscle analytics, and onboarding flows",
       "Developed premium subscriptions, growth assets, and backend systems with Supabase",
     ],
     impact:
       "RepQuest is the clearest example of full product ownership: concept, build, launch, iteration, analytics, and monetization.",
     stack: ["React Native", "Expo", "Supabase", "Subscriptions"],
-    detailsButtonLabel: "Details",
+    detailsButtonLabel: "View Details",
   },
   {
     title: "Sequoia Apps",
@@ -95,7 +64,7 @@ const projects: Project[] = [
     summary:
       "A company focused on building websites, apps, and digital products for real clients and new ventures.",
     bullets: [
-      "Co-founded Sequoia Apps LLC and developed sites including sequoiaapps.com and feedingthenrv.com",
+      "Co-founded Sequoia Apps LLC and developed client websites and digital products",
       "Handled design, development, and client-facing communication across multiple projects",
       "Used the business as a platform to learn product delivery, sales outreach, and execution",
     ],
@@ -104,28 +73,13 @@ const projects: Project[] = [
     stack: ["Web Development", "UI Design", "Client Delivery", "Outreach"],
     links: [{ label: "Visit Site", href: "https://sequoiaapps.com" }],
   },
-  {
-    title: "feedingtheNRV.com",
-    subtitle: "Website project delivered through Sequoia Apps",
-    summary:
-      "A live website project that reflects the kind of design and development work I build through Sequoia Apps.",
-    bullets: [
-      "Planned and built the site as part of a client-facing web delivery workflow",
-      "Focused on clean layout, performance, and a professional presentation",
-      "Used the project to strengthen repeatable website design and launch processes",
-    ],
-    impact:
-      "This project highlights applied web delivery work rather than a classroom mockup: real scope, real constraints, and a shipped result.",
-    stack: ["Web Development", "Responsive Design", "Launch Support"],
-    links: [{ label: "Visit Site", href: "https://feedingthenrv.com" }],
-  },
 ];
 
 const evidenceRows = [
   {
     capability: "Product Build and Launch",
     evidence:
-      "RepQuest: built a consumer app around workout rankings, XP, streaks, personal records, and progress tracking, then launched it to 4,000+ users.",
+      "RepQuest: built a consumer app around workout rankings, XP, streaks, personal records, and progress tracking, then launched it to 4,000+ users/downloads on the App Store.",
     stack: ["React Native", "Expo", "Supabase", "Subscriptions"],
   },
   {
@@ -137,7 +91,7 @@ const evidenceRows = [
   {
     capability: "Client-Facing Web Delivery",
     evidence:
-      "Sequoia Apps: designed and delivered multiple websites, including sequoiaapps.com and feedingthenrv.com.",
+      "Sequoia Apps: designed and delivered websites and digital products for real clients.",
     stack: ["Web Development", "UI Design", "Client Projects"],
   },
   {
@@ -150,22 +104,22 @@ const evidenceRows = [
 
 const timelineItems: TimelineItem[] = [
   {
-    company: "Wayne Hills High School",
-    role: "Student",
-    date: "Expected Graduation: June 2027 | GPA: 4.45/4",
-  },
-  {
-    company: "Sequoia Apps LLC",
-    role: "Co-founder",
-    date: "June 2025 - Present",
-  },
-  {
-    company: "RepQuest - Ranked Gym",
+    company: "RepQuest",
     role: "Founder & Developer",
-    date: "2025 - Present",
+    date: "Built with React Native, Expo, and Supabase",
   },
   {
-    company: "Wayne Hills Varsity Lacrosse",
+    company: "Sequoia Apps",
+    role: "Co-founder",
+    date: "Websites, apps, and digital products",
+  },
+  {
+    company: "Wayne Hills High School",
+    role: "Class of 2027",
+    date: "High Honor Roll | GPA 4.45/4",
+  },
+  {
+    company: "Varsity Lacrosse",
     role: "Captain",
     date: "Leadership and team development",
   },
@@ -212,29 +166,6 @@ const principles = [
   "Learn quickly, ship consistently, and improve through iteration.",
 ];
 
-const recruiterFAQ = [
-  {
-    question: "What are you building right now?",
-    answer:
-      "Most of my current work centers on RepQuest, Sequoia Apps, and building digital products that combine good UX with strong backend foundations.",
-  },
-  {
-    question: "What kinds of opportunities are the best fit?",
-    answer:
-      "I am especially interested in app development, software engineering, startup environments, and opportunities where I can keep learning by building real products.",
-  },
-  {
-    question: "What is the fastest way to reach out?",
-    answer:
-      "Email dylanknapp8888@gmail.com with context about the project, role, or collaboration idea. LinkedIn is also available if you prefer to connect there.",
-  },
-  {
-    question: "What makes your work different from a typical student portfolio?",
-    answer:
-      "I focus on products that are launched, used, and improved over time. The goal is not just to build projects, but to learn how to create software people actually want to keep using.",
-  },
-];
-
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -273,133 +204,40 @@ export default function Home() {
       <main>
         <Hero />
 
-        <Section id="about" title="About Dylan" eyebrow="About">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <article className="card-premium p-6 sm:p-7">
-              <p className="max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-                I am a high school student at Wayne Hills High School with a
-                strong interest in app development, entrepreneurship, and
-                software engineering. I built and launched RepQuest, a gamified
-                fitness tracking app with thousands of users, and I also
-                co-founded Sequoia Apps LLC, where I work on websites, apps,
-                and digital products. I enjoy building real products, learning
-                new technologies, and solving problems through software.
-              </p>
-            </article>
-
-            <article className="card-premium p-6 sm:p-7">
-              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
-                Education
-              </p>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
-                Wayne Hills High School
-              </h3>
-              <p className="mt-2 text-sm text-[var(--muted)]">
-                Wayne, New Jersey
-              </p>
-              <div className="mt-5 space-y-2 text-sm text-[var(--muted)]">
-                <p>Expected Graduation: June 2027</p>
-                <p>GPA: 4.45/4</p>
-              </div>
-            </article>
-          </div>
-
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <article className="card-premium p-6">
-              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
-                Honors
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                {[
-                  "High Honor Roll",
-                  "National Honor Society",
-                  "Spanish National Honor Society",
-                ].map((honor) => (
-                  <li key={honor} className="flex items-start gap-2">
-                    <span
-                      aria-hidden
-                      className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/70"
-                    />
-                    <span>{honor}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-
-            <article className="card-premium p-6">
-              <p className="text-xs font-medium tracking-[0.18em] text-white/65 uppercase">
-                Activities and Leadership
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                {[
-                  "Captain of the lacrosse team",
-                  "Varsity lacrosse",
-                  "Vice President of the Computer Science Club",
-                  "National Honor Society",
-                  "Spanish National Honor Society",
-                  "Spanish Club",
-                  "Engineering Club",
-                  "Red Cross Club",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span
-                      aria-hidden
-                      className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/70"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+        <Section id="projects" title="Featured Projects" eyebrow="Projects" className="section-rich">
+          <div className="grid gap-6 md:grid-cols-2">
+            <ProjectCard
+              project={projects[0]}
+              onOpenDetails={() => setIsRepQuestOpen(true)}
+            />
+            <ProjectCard project={projects[1]} />
           </div>
         </Section>
 
-        <Section id="projects" title="Selected Work" eyebrow="Projects">
-          <div className="grid gap-6 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                onOpenDetails={
-                  project.title === "RepQuest"
-                    ? () => setIsRepQuestOpen(true)
-                    : undefined
-                }
-              />
-            ))}
-          </div>
-        </Section>
-
-        <Section id="capabilities" title="What I Build" eyebrow="Work I Like">
+        <Section id="capabilities" title="How I Build" eyebrow="Capabilities" className="section-soft">
           <Capabilities items={capabilities} />
-        </Section>
-
-        <Section id="proof" className="pt-2">
-          <ProofChips chips={proofChips} />
         </Section>
 
         <Section
           id="evidence"
-          title="What That Looks Like In Practice"
+          title="Execution"
           eyebrow="Execution"
+          className="section-soft"
         >
           <SkillsEvidence rows={evidenceRows} />
         </Section>
 
         <Section
           id="experience"
-          title="Where I&apos;ve Been Spending Time"
-          eyebrow="Timeline"
+          title="Current Roles"
+          eyebrow="Snapshot"
+          className="section-soft"
         >
           <Timeline items={timelineItems} />
         </Section>
 
-        <Section id="skills" title="Tools + Working Style" eyebrow="How I Operate">
+        <Section id="skills" title="Tools + Working Style" eyebrow="Skills" className="section-alt">
           <Skills groups={skillGroups} principles={principles} />
-        </Section>
-
-        <Section id="faq" title="Questions People Usually Ask" eyebrow="FAQ">
-          <RecruiterFAQ items={recruiterFAQ} />
         </Section>
 
         <Section id="contact" className="pt-3">

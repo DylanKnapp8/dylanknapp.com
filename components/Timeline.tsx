@@ -10,17 +10,19 @@ type TimelineProps = {
 
 export default function Timeline({ items }: TimelineProps) {
   return (
-    <ol className="relative ml-2 border-l border-white/15 pl-6">
+    <ol className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <li key={`${item.company}-${item.role}`} className="relative mb-7 last:mb-0">
-          <span
-            aria-hidden
-            className="absolute -left-[1.83rem] top-1.5 h-3.5 w-3.5 rounded-full border border-white/45 bg-white/20"
-          />
-          <p className="text-sm font-medium text-white">
-            {item.company} - {item.role}
-          </p>
-          <p className="mt-1 text-xs text-[var(--muted)]">{item.date}</p>
+        <li
+          key={`${item.company}-${item.role}`}
+          className="card-premium flex min-h-[124px] flex-col justify-between p-5"
+        >
+          <div>
+            <p className="text-[0.66rem] font-semibold tracking-[0.18em] text-white/46 uppercase">
+              {item.role}
+            </p>
+            <p className="mt-2 text-base font-semibold text-white">{item.company}</p>
+          </div>
+          <p className="mt-4 text-sm text-[var(--muted)]">{item.date}</p>
         </li>
       ))}
     </ol>

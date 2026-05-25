@@ -14,11 +14,11 @@ export default function SkillsEvidence({ rows }: SkillsEvidenceProps) {
       {rows.map((row) => (
         <article
           key={row.capability}
-          className="card-premium grid gap-3 p-5 md:grid-cols-[0.95fr_1.8fr_1fr] md:items-start"
+          className="card-premium grid gap-4 p-5 md:grid-cols-[0.95fr_1.7fr_1fr] md:items-start"
         >
           <div>
             <p className="text-xs font-medium tracking-[0.12em] text-white/65 uppercase">
-              Capability
+              Focus
             </p>
             <h3 className="mt-1 text-sm font-semibold text-white">
               {row.capability}
@@ -27,9 +27,9 @@ export default function SkillsEvidence({ rows }: SkillsEvidenceProps) {
 
           <div>
             <p className="text-xs font-medium tracking-[0.12em] text-white/65 uppercase">
-              Evidence
+              Proof
             </p>
-            <p className="mt-1 text-sm text-[var(--muted)]">{row.evidence}</p>
+            <p className="mt-1 text-sm leading-7 text-[var(--muted)]">{row.evidence}</p>
           </div>
 
           <div>

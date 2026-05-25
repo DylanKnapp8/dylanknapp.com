@@ -4,20 +4,20 @@ type SnowParticleStyle = CSSProperties &
   Record<"--drift-start" | "--drift-end" | "--flake-opacity", string>;
 
 const snowParticles: SnowParticleStyle[] = Array.from(
-  { length: 22 },
+  { length: 26 },
   (_, index) => {
-    const size = 2 + (index % 4);
+    const size = 3 + (index % 4);
 
     return {
       left: `${(index * 8.7 + (index % 5) * 11) % 100}%`,
       width: `${size}px`,
       height: `${size}px`,
-      filter: `blur(${(index % 3) * 0.35}px)`,
+      filter: `blur(${(index % 3) * 0.25}px)`,
       animationDuration: `${14 + (index % 7) * 2.6}s`,
       animationDelay: `${-index * 1.7}s`,
       "--drift-start": `${-24 + (index % 6) * 7}px`,
       "--drift-end": `${18 - (index % 5) * 6}px`,
-      "--flake-opacity": `${0.18 + (index % 6) * 0.08}`,
+      "--flake-opacity": `${0.28 + (index % 6) * 0.07}`,
     };
   },
 );

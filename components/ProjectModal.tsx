@@ -117,7 +117,7 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                 </h4>
                 <div className="mt-4 grid gap-3 sm:grid-cols-3">
                   {[
-                    "4,000+ users and downloads",
+                    "4,000+ app users/downloads",
                     "Ranks, XP, streaks, and progress tracking",
                     "Built with React Native, Expo, and Supabase",
                   ].map((item) => (

@@ -9,11 +9,10 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "evidence", label: "Execution" },
   { id: "skills", label: "Skills" },
-  { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -42,13 +41,16 @@ export default function Navbar() {
           id: string;
           element: HTMLElement;
         } => Boolean(section),
+      )
+      .sort(
+        (left, right) => left.element.offsetTop - right.element.offsetTop,
       );
 
     let frameId: number | null = null;
 
     const updateActiveSection = () => {
       const navHeight = headerRef.current?.offsetHeight ?? 64;
-      const activationLine = navHeight + 24;
+      const activationLine = window.scrollY + navHeight + 120;
       const isAtPageBottom =
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 2;
@@ -58,46 +60,33 @@ export default function Navbar() {
         return;
       }
 
-      const visibleSections = sections
-        .map((section) => ({
-          ...section,
-          rect: section.element.getBoundingClientRect(),
-        }))
-        .filter(
-          (section) =>
-            section.rect.bottom > activationLine &&
-            section.rect.top < window.innerHeight,
-        );
-
-      if (visibleSections.length > 0) {
-        const nextActiveSection = visibleSections.reduce((closest, section) => {
-          const closestDistance = Math.abs(closest.rect.top - activationLine);
-          const sectionDistance = Math.abs(section.rect.top - activationLine);
-
-          if (sectionDistance < closestDistance) {
-            return section;
+      const nextActiveSection =
+        sections.reduce((current, section) => {
+          if (section.element.offsetTop <= activationLine) {
+            return section.id;
           }
 
-          return closest;
-        }).id;
-
-        setActiveSection((current) =>
-          current === nextActiveSection ? current : nextActiveSection,
-        );
-        return;
-      }
-
-      const fallbackSection = [...sections]
-        .reverse()
-        .find(
-          (section) =>
-            section.element.getBoundingClientRect().top <= activationLine,
-        );
-      const nextActiveSection = fallbackSection?.id ?? sections[0]?.id ?? "hero";
+          return current;
+        }, sections[0]?.id ?? "hero") ?? "hero";
 
       setActiveSection((current) =>
         current === nextActiveSection ? current : nextActiveSection,
       );
+    };
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+
+      if (navItems.some((item) => item.id === hash)) {
+        setActiveSection(hash);
+        return;
+      }
+
+      updateActiveSection();
     };
 
     const requestUpdate = () => {
@@ -111,11 +100,11 @@ export default function Navbar() {
       });
     };
 
-    updateActiveSection();
+    syncFromHash();
 
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
-    window.addEventListener("hashchange", requestUpdate);
+    window.addEventListener("hashchange", syncFromHash);
 
     return () => {
       if (frameId !== null) {
@@ -124,15 +113,12 @@ export default function Navbar() {
 
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
-      window.removeEventListener("hashchange", requestUpdate);
+      window.removeEventListener("hashchange", syncFromHash);
     };
   }, []);
 
   return (
-    <header
-      ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(8,10,15,0.68)] backdrop-blur-xl"
-    >
+    <header ref={headerRef} className="site-nav sticky top-0 z-50">
       <div className="container-shell flex h-16 items-center justify-between gap-6">
         <a
           href="#hero"
@@ -155,11 +141,8 @@ export default function Navbar() {
                   <a
                     href={`#${item.id}`}
                     onClick={() => setActiveSection(item.id)}
-                    className={`rounded-full px-3 py-1.5 text-sm transition ${
-                      isActive
-                        ? "bg-white/12 text-white"
-                        : "text-[var(--muted)] hover:text-white"
-                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`nav-link ${isActive ? "is-active" : ""}`}
                   >
                     {item.label}
                   </a>
@@ -174,7 +157,7 @@ export default function Navbar() {
             Resume
           </a>
           <a href="#contact" className="btn-primary px-4 py-2 text-sm">
-            Say Hello
+            Get in Touch
           </a>
         </div>
       </div>

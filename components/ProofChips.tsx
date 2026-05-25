@@ -91,40 +91,22 @@ function ProofIcon({ icon }: Pick<ProofItem, "icon">) {
 
 export default function ProofChips({ chips }: ProofChipsProps) {
   return (
-    <div className="grid gap-5 xl:grid-cols-[0.84fr_1.16fr]">
-      <motion.div
-        className="card-premium relative overflow-hidden p-6 sm:p-7"
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.55 }}
-      >
-        <div
-          aria-hidden
-          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/55 to-transparent"
-        />
-
-        <p className="text-[0.68rem] font-semibold tracking-[0.28em] text-white/48 uppercase">
-          Quick Proof
-        </p>
-        <h3 className="mt-3 max-w-sm text-3xl leading-tight font-semibold tracking-tight text-white sm:text-[2.4rem] [font-family:var(--font-fraunces)]">
-          Built around real work.
-        </h3>
-        <p className="mt-4 max-w-md text-sm leading-7 text-[var(--muted)] sm:text-base">
-          A few fast indicators of the kind of work featured here: launched
-          products, real users, active ventures, and technical range that
-          already goes beyond classroom projects.
-        </p>
-
-        <div className="mt-7 flex items-center gap-3">
-          <div className="h-px flex-1 bg-gradient-to-r from-white/35 to-transparent" />
-          <span className="text-[0.68rem] font-semibold tracking-[0.24em] text-white/42 uppercase">
-            Four snapshots
-          </span>
+    <div className="space-y-5">
+      <div className="flex items-end justify-between gap-4">
+        <div className="space-y-2">
+          <p className="text-[0.68rem] font-semibold tracking-[0.24em] text-white/48 uppercase">
+            Snapshot
+          </p>
+          <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+            Builder dashboard
+          </h2>
         </div>
-      </motion.div>
+        <p className="hidden max-w-md text-right text-sm leading-6 text-[var(--muted)] md:block">
+          A compact view of traction, technical focus, and the roles shaping the work.
+        </p>
+      </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {chips.map((chip, index) => (
           <motion.article
             key={`${chip.label}-${chip.value}`}

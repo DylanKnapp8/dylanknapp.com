@@ -42,18 +42,14 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, -22]);
-  const cardY = useTransform(scrollYProgress, [0, 1], [0, 26]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, -14]);
 
   useEffect(() => {
     let animationFrameId = 0;
 
     const animateCountIn = (startTime: number) => {
       const frame = (now: number) => {
-        const progress = Math.min(
-          1,
-          (now - startTime) / LOAD_IN_DURATION_MS,
-        );
+        const progress = Math.min(1, (now - startTime) / LOAD_IN_DURATION_MS);
         const easedProgress = 1 - (1 - progress) ** 3;
         const nextValue = Math.floor(
           LOAD_IN_COUNT_START +
@@ -84,101 +80,97 @@ export default function Hero() {
     <section
       id="hero"
       ref={targetRef}
-      className="scroll-mt-24 pt-[4.5rem] pb-12 sm:pt-24 sm:pb-16"
+      className="scroll-mt-24 pt-[3.6rem] pb-10 sm:pt-16 sm:pb-14"
     >
-      <div className="container-shell grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="container-shell grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] xl:grid-cols-[minmax(0,1fr)_26rem]">
         <motion.div style={{ y: titleY }} className="space-y-8">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.05] px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-[#eef4ff] shadow-[0_0_18px_rgba(196,214,255,0.8)]" />
-            <span className="text-[0.82rem] font-semibold tracking-[0.24em] text-white/65 uppercase">
-              Dylan B. Knapp
-            </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <span className="h-2 w-2 rounded-full bg-[#eef4ff] shadow-[0_0_18px_rgba(196,214,255,0.8)]" />
+              <span className="text-[0.82rem] font-semibold tracking-[0.24em] text-white/65 uppercase">
+                Dylan B. Knapp
+              </span>
+            </div>
           </div>
 
           <div className="space-y-6">
-            <p className="text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">
-              Founder of RepQuest | App Developer | Student Entrepreneur
+            <p className="text-xs font-semibold tracking-[0.18em] text-white/52 uppercase">
+              Builder Profile
             </p>
 
-            <div className="headline-wrap">
+            <div className="headline-wrap inline-block max-w-4xl">
               <span aria-hidden className="headline-glow" />
-              <h1 className="max-w-3xl text-4xl leading-[0.98] font-semibold tracking-tight text-white sm:text-5xl lg:text-[4.35rem]">
+              <h1 className="max-w-4xl text-4xl leading-[0.96] font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[5.25rem]">
                 I build apps and digital products that people actually use.
               </h1>
             </div>
 
-            <div className="max-w-xl space-y-3">
-              <p className="text-sm leading-6 text-[var(--muted)]">
-                High school student at Wayne Hills building fitness tech,
-                software products, and client websites.
+            <div className="space-y-6">
+              <p className="max-w-2xl text-base leading-8 text-[var(--muted)]">
+                High school student, founder of RepQuest, and co-founder of
+                Sequoia Apps.
               </p>
-              <p className="flex flex-wrap items-end gap-x-3 gap-y-1 text-white">
-                <span className="text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
-                  {numberFormatter.format(featuredUsers)}+
-                </span>
-                <span className="pb-1 text-sm font-medium tracking-[0.04em] text-white/72 sm:text-base">
-                  RepQuest users and downloads
-                </span>
-              </p>
+
+              <div className="hero-metric-strip">
+                <div className="hero-metric-main">
+                  <p className="hero-metric-number">
+                    {numberFormatter.format(featuredUsers)}+
+                  </p>
+                  <p className="hero-metric-label">app users/downloads</p>
+                </div>
+                <div className="hero-metric-divider" />
+                <div className="hero-metric-notes">
+                  <div className="hero-note-chip">
+                    <span className="hero-note-chip-label">Founder</span>
+                    <span className="hero-note-chip-value">RepQuest</span>
+                  </div>
+                  <div className="hero-note-chip">
+                    <span className="hero-note-chip-label">Class</span>
+                    <span className="hero-note-chip-value">2027</span>
+                  </div>
+                  <div className="hero-note-chip">
+                    <span className="hero-note-chip-label">Stack</span>
+                    <span className="hero-note-chip-value">
+                      React Native / Expo / Supabase
+                    </span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </motion.div>
 
-        <motion.aside
-          style={{ y: cardY }}
-          className="card-premium relative overflow-hidden p-6 sm:p-7"
-        >
-          <div
-            aria-hidden
-            className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
-          />
-
-          <div>
-            <p className="text-[0.68rem] font-semibold tracking-[0.28em] text-white/50 uppercase">
-              Field Notes
-            </p>
-            <h2 className="mt-3 max-w-md text-3xl leading-tight font-semibold text-white sm:text-[2.2rem]">
-              About me
-            </h2>
-          </div>
-
-          <div className="mt-5 text-sm leading-7 text-[var(--muted)]">
-            <div className="relative float-right mb-3 ml-5 flex h-32 w-32 items-center justify-center overflow-hidden rounded-[1.2rem] border border-white/12 bg-gradient-to-br from-white/[0.12] to-white/[0.03] shadow-[0_18px_40px_rgba(0,0,0,0.28)] sm:mb-4 sm:ml-6 sm:h-36 sm:w-36">
-              <span className="text-4xl font-semibold tracking-[0.2em] text-white/90 sm:text-5xl">
-                DK
-              </span>
-            </div>
-            <p className="max-w-lg">
-              I am a high school student at Wayne Hills High School with a
-              strong interest in app development, entrepreneurship, and
-              software engineering. I built and launched RepQuest, and I
-              co-founded Sequoia Apps LLC to work on websites, apps, and
-              digital products.
-            </p>
-            <div className="clear-both" />
-          </div>
-
-          <div className="mt-6 space-y-3">
-            <article className="hero-note">
-              <p className="text-[0.68rem] font-semibold tracking-[0.26em] text-white/50 uppercase">
-                Current Stack
-              </p>
-              <p className="relative mt-3 text-sm leading-6 text-white/90">
-                Java, React Native, Expo, Supabase, web development, UI/UX,
-                and product-focused software engineering.
-              </p>
-            </article>
-
-            <div className="grid gap-3">
-              <article className="hero-note">
-                <p className="text-[0.68rem] font-semibold tracking-[0.26em] text-white/50 uppercase">
-                  Reach
+        <div className="hero-side-panel flex flex-col gap-5">
+          <motion.aside className="glass-panel relative h-fit overflow-hidden p-5 sm:p-6">
+            <div className="relative space-y-5">
+              <div className="space-y-3">
+                <p className="text-[0.68rem] font-semibold tracking-[0.24em] text-white/50 uppercase">
+                  Focus Board
                 </p>
-                <div className="relative mt-4 flex flex-wrap gap-3">
-                  <IconLink
-                    href="mailto:dylanknapp8888@gmail.com"
-                    label="Email Dylan"
-                  >
+                <h2 className="text-[1.85rem] leading-tight font-semibold tracking-tight text-white">
+                  Product traction, app execution, and founder-led delivery.
+                </h2>
+              </div>
+
+              <div className="hero-side-copy">
+                I&apos;m focused on building products with real traction,
+                especially RepQuest, where I handle the app experience, product
+                direction, and Supabase backend.
+              </div>
+
+            <div className="hero-side-section">
+              <p className="hero-side-kicker">Proof of Work</p>
+              <p className="mt-3 text-sm leading-7 text-white/86">
+                Launched a mobile app, built backend systems with Supabase, and
+                shipped real products used by thousands.
+              </p>
+            </div>
+
+              <div className="hero-side-section">
+                <p className="hero-side-kicker">Reach</p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <IconLink href="mailto:dylanknapp8888@gmail.com" label="Email Dylan">
                     <svg
                       aria-hidden
                       viewBox="0 0 24 24"
@@ -208,11 +200,7 @@ export default function Hero() {
                     </svg>
                   </IconLink>
 
-                  <IconLink
-                    href="/resume.pdf"
-                    label="Download resume"
-                    download
-                  >
+                  <IconLink href="/resume.pdf" label="Download resume" download>
                     <svg
                       aria-hidden
                       viewBox="0 0 24 24"
@@ -230,18 +218,27 @@ export default function Hero() {
                     </svg>
                   </IconLink>
                 </div>
-              </article>
-            </div>
-          </div>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="btn-primary mt-6 w-full justify-center px-5 py-3 text-sm"
-          >
-            Download Resume
-          </a>
-        </motion.aside>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="btn-secondary mt-5 w-full justify-center px-5 py-3 text-sm"
+                >
+                  Download Resume
+                </a>
+              </div>
+            </div>
+          </motion.aside>
+
+          <div className="flex flex-wrap gap-3 lg:justify-start lg:pl-16">
+            <a href="#projects" className="btn-primary px-5 py-3 text-sm">
+              View Projects
+            </a>
+            <a href="#contact" className="btn-secondary px-5 py-3 text-sm">
+              Contact Me
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
