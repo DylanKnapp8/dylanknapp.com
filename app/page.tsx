@@ -169,7 +169,7 @@ const principles = [
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Dylan B. Knapp",
+  name: "Dylan Knapp",
   url: "https://dylanknapp.com",
   jobTitle: "Founder of RepQuest | App Developer | Student Entrepreneur",
   email: "mailto:dylanknapp8888@gmail.com",

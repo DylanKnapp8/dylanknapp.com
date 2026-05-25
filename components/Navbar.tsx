@@ -128,7 +128,7 @@ export default function Navbar() {
             Personal Website
           </span>
           <span className="mt-1 text-sm font-semibold tracking-[0.2em] text-white uppercase">
-            Dylan B. Knapp
+            Dylan Knapp
           </span>
         </a>
 
@@ -162,7 +162,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            className="btn-primary nav-top-button nav-top-primary px-4 py-2 text-sm whitespace-nowrap"
+            className="nav-top-button nav-top-primary nav-top-white px-4 py-2 text-sm whitespace-nowrap"
           >
             Get in Touch
           </a>

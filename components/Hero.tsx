@@ -88,7 +88,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
               <span className="h-2 w-2 rounded-full bg-[#eef4ff] shadow-[0_0_18px_rgba(196,214,255,0.8)]" />
               <span className="text-[0.82rem] font-semibold tracking-[0.24em] text-white/65 uppercase">
-                Dylan B. Knapp
+                Dylan Knapp
               </span>
             </div>
           </div>

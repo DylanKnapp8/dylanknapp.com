@@ -1,6 +1,6 @@
-# Dylan B. Knapp - Personal Website
+# Dylan Knapp - Personal Website
 
-Personal portfolio for Dylan B. Knapp, built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+Personal portfolio for Dylan Knapp, built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Overview
 

@@ -16,11 +16,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dylanknapp.com"),
-  title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
+  title: "Dylan Knapp | Founder of RepQuest | App Developer",
   description:
-    "Personal website of Dylan B. Knapp, a high school student, app developer, and student entrepreneur building digital products and fitness tech.",
+    "Personal website of Dylan Knapp, a high school student, app developer, and student entrepreneur building digital products and fitness tech.",
   keywords: [
-    "Dylan B. Knapp",
+    "Dylan Knapp",
     "Dylan Knapp",
     "RepQuest",
     "Sequoia Apps",
@@ -33,26 +33,26 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
+    title: "Dylan Knapp | Founder of RepQuest | App Developer",
     description:
-      "Personal website of Dylan B. Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
+      "Personal website of Dylan Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
     url: "https://dylanknapp.com",
-    siteName: "Dylan B. Knapp",
+    siteName: "Dylan Knapp",
     type: "website",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Dylan B. Knapp - Founder of RepQuest | App Developer",
+        alt: "Dylan Knapp - Founder of RepQuest | App Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dylan B. Knapp | Founder of RepQuest | App Developer",
+    title: "Dylan Knapp | Founder of RepQuest | App Developer",
     description:
-      "Personal website of Dylan B. Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
+      "Personal website of Dylan Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
     images: ["/twitter-image"],
   },
   icons: {
