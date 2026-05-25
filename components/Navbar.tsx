@@ -152,11 +152,18 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a href="/resume.pdf" download className="btn-secondary px-4 py-2 text-sm">
+        <div className="nav-action-group flex items-center gap-2">
+          <a
+            href="/resume.pdf"
+            download
+            className="btn-secondary nav-top-button nav-top-secondary px-4 py-2 text-sm"
+          >
             Resume
           </a>
-          <a href="#contact" className="btn-primary px-4 py-2 text-sm">
+          <a
+            href="#contact"
+            className="btn-primary nav-top-button nav-top-primary px-4 py-2 text-sm whitespace-nowrap"
+          >
             Get in Touch
           </a>
         </div>
