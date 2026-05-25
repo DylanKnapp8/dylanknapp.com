@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+export const dynamic = "force-static";
 export const alt = "Dylan B. Knapp - Founder of RepQuest | App Developer";
 export const size = {
   width: 1200,

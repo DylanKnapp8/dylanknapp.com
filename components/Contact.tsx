@@ -12,10 +12,11 @@ export default function Contact() {
       viewport={{ once: true, amount: 0.35 }}
     >
       <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-        Want to connect, collaborate, or see what I&apos;m building?
+        Want to connect or build something?
       </h2>
       <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-        Email is the best way to reach me.
+        I&apos;m open to talking about app ideas, websites, projects, or what
+        I&apos;m building.
       </p>
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <a

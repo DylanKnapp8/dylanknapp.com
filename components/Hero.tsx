@@ -136,7 +136,6 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </motion.div>
@@ -159,13 +158,13 @@ export default function Hero() {
                 direction, and Supabase backend.
               </div>
 
-            <div className="hero-side-section">
-              <p className="hero-side-kicker">Proof of Work</p>
-              <p className="mt-3 text-sm leading-7 text-white/86">
-                Launched a mobile app, built backend systems with Supabase, and
-                shipped real products used by thousands.
-              </p>
-            </div>
+              <div className="hero-side-section">
+                <p className="hero-side-kicker">Proof of Work</p>
+                <p className="mt-3 text-sm leading-7 text-white/86">
+                  Launched a mobile app, built backend systems with Supabase, and
+                  shipped real products used by thousands.
+                </p>
+              </div>
 
               <div className="hero-side-section">
                 <p className="hero-side-kicker">Reach</p>
