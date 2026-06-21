@@ -49,7 +49,7 @@ const projects: Project[] = [
     summary:
       "A fitness app built to make training more competitive and engaging through rankings, XP, streaks, workout logging, and performance tracking.",
     bullets: [
-      "Built and launched the app to 4,000+ users/downloads on the App Store",
+      "Built and launched the app to 6,000+ users/downloads on the App Store",
       "Created rankings, nutrition, personal records, muscle analytics, and onboarding flows",
       "Developed premium subscriptions, growth assets, and backend systems with Supabase",
     ],
@@ -79,7 +79,7 @@ const evidenceRows = [
   {
     capability: "Product Build and Launch",
     evidence:
-      "RepQuest: built a consumer app around workout rankings, XP, streaks, personal records, and progress tracking, then launched it to 4,000+ users/downloads on the App Store.",
+      "RepQuest: built a consumer app around workout rankings, XP, streaks, personal records, and progress tracking, then launched it to 6,000+ users/downloads on the App Store.",
     stack: ["React Native", "Expo", "Supabase", "Subscriptions"],
   },
   {

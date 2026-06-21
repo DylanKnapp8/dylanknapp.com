@@ -85,7 +85,7 @@ export default function ProjectCard({
       {featured ? (
         <div className="project-insight-grid mt-6">
           <div className="project-insight-card">
-            <p className="project-insight-value">4,000+</p>
+            <p className="project-insight-value">6,000+</p>
             <p className="project-insight-label">users/downloads</p>
           </div>
           <div className="project-insight-card">

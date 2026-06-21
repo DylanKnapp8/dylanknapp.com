@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 
-const USER_COUNT_TARGET = 4000;
+const USER_COUNT_TARGET = 6000;
 const LOAD_IN_COUNT_START = 2800;
 const LOAD_IN_DURATION_MS = 1600;
 const numberFormatter = new Intl.NumberFormat("en-US");
