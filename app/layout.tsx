@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -8,22 +8,15 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://dylanknapp.com"),
-  title: "Dylan Knapp | Founder of RepQuest | App Developer",
+  title: "Dylan Knapp | Developer & Founder",
   description:
-    "Personal website of Dylan Knapp, a high school student, app developer, and student entrepreneur building digital products and fitness tech.",
+    "Dylan Knapp builds apps and digital products. Explore RepQuest and selected projects through Quoia.",
   keywords: [
     "Dylan Knapp",
-    "Dylan Knapp",
     "RepQuest",
-    "Sequoia Apps",
+    "Quoia",
     "App Developer",
     "Student Entrepreneur",
     "React Native",
@@ -33,9 +26,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Dylan Knapp | Founder of RepQuest | App Developer",
+    title: "Dylan Knapp | Developer & Founder",
     description:
-      "Personal website of Dylan Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
+      "Dylan Knapp builds apps and digital products. Explore RepQuest, Quoia, and his approach to building.",
     url: "https://dylanknapp.com",
     siteName: "Dylan Knapp",
     type: "website",
@@ -44,15 +37,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Dylan Knapp - Founder of RepQuest | App Developer",
+        alt: "Dylan Knapp — developer and founder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dylan Knapp | Founder of RepQuest | App Developer",
+    title: "Dylan Knapp | Developer & Founder",
     description:
-      "Personal website of Dylan Knapp, featuring app development, entrepreneurship, fitness tech, and software projects.",
+      "Dylan Knapp builds apps and digital products. Explore RepQuest and Quoia.",
     images: ["/twitter-image"],
   },
   icons: {
@@ -64,8 +57,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#02040a",
-  colorScheme: "dark",
+  themeColor: "#faf9f6",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -76,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${fraunces.variable} font-sans antialiased`}
+        className={`${manrope.variable} font-sans antialiased`}
       >
         {children}
       </body>

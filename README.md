@@ -1,17 +1,16 @@
 # Dylan Knapp - Personal Website
 
-Personal portfolio for Dylan Knapp, built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+Personal portfolio for Dylan Knapp, built with Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## Overview
 
-This site presents Dylan as a high school student, app developer, and student entrepreneur. It highlights RepQuest, Sequoia Apps LLC, client web work, education, leadership, and contact information.
+The homepage presents an interactive index of RepQuest and three websites made through Quoia, followed by a RepQuest walkthrough, a website gallery, background, and contact information.
 
 ## Tech Stack
 
 - Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS v4
-- Framer Motion
 
 ## Run Locally
 
@@ -26,7 +25,6 @@ Open `http://localhost:3000`.
 
 ```bash
 npm run build
-npm start
 ```
 
 ## Project Structure
@@ -42,21 +40,20 @@ app/
   sitemap.ts
   twitter-image.tsx
 components/
-  Capabilities.tsx
   Contact.tsx
   Hero.tsx
   Navbar.tsx
-  ProofChips.tsx
-  ProjectCard.tsx
-  ProjectModal.tsx
-  RecruiterFAQ.tsx
-  RecruiterSnapshot.tsx
-  Section.tsx
-  Skills.tsx
-  SkillsEvidence.tsx
-  Timeline.tsx
+  ProjectComposition.tsx
+  QuoiaGallery.tsx
+  RepQuestShowcase.tsx
+  ScrollReveals.tsx
+assets/
+  headshot.png
+  headshot.webp
+  preview-*.webp
+  repquest-*.jpg
 public/
-  profile-grid.svg
+  resume.pdf
 ```
 
 ## Content Locations
@@ -66,3 +63,5 @@ public/
 - Open Graph and Twitter image routes live in `app/opengraph-image.tsx` and `app/twitter-image.tsx`.
 - The favicon is generated in `app/icon.tsx`.
 - Visual theme and motion styling live in `app/globals.css`.
+- `npm run build` writes the static site to `out/`.
+- RepQuest screenshots are from the official App Store listing. Website previews were captured from the live RentPadAI, Knapp Arcade, and Feeding the NRV sites. The résumé is served from `public/resume.pdf`.

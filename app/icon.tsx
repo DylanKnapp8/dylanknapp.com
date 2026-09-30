@@ -19,14 +19,13 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "radial-gradient(circle at top, rgba(235,240,255,0.28), transparent 45%), linear-gradient(180deg, #0b0d12 0%, #040507 100%)",
-          color: "#f6f7fb",
+          background: "#285447",
+          color: "#faf9f6",
           fontSize: 28,
           fontWeight: 700,
           letterSpacing: 4,
           borderRadius: 14,
-          border: "1px solid rgba(255,255,255,0.18)",
+          border: "1px solid #285447",
         }}
       >
         DK

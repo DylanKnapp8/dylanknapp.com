@@ -2,172 +2,104 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type NavItem = {
-  id: string;
-  label: string;
-};
-
-const navItems: NavItem[] = [
-  { id: "hero", label: "Home" },
-  { id: "projects", label: "Projects" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "evidence", label: "Execution" },
-  { id: "skills", label: "Skills" },
+const navItems = [
+  { id: "work", label: "Work" },
+  { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const headerRef = useRef<HTMLElement | null>(null);
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const sections = navItems
-      .map((item) => {
-        const element = document.getElementById(item.id);
-
-        if (!element) {
-          return null;
-        }
-
-        return {
-          id: item.id,
-          element,
-        };
-      })
-      .filter(
-        (
-          section,
-        ): section is {
-          id: string;
-          element: HTMLElement;
-        } => Boolean(section),
-      )
-      .sort(
-        (left, right) => left.element.offsetTop - right.element.offsetTop,
-      );
-
-    let frameId: number | null = null;
-
-    const updateActiveSection = () => {
-      const navHeight = headerRef.current?.offsetHeight ?? 64;
-      const activationLine = window.scrollY + navHeight + 120;
-      const isAtPageBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 2;
-
-      if (isAtPageBottom) {
-        setActiveSection(navItems[navItems.length - 1].id);
-        return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      setScrolled(window.scrollY > 12);
+      const line = window.scrollY + 130;
+      let current = "";
+      for (const item of navItems) {
+        const section = document.getElementById(item.id);
+        if (section && section.offsetTop <= line) current = item.id;
       }
-
-      const nextActiveSection =
-        sections.reduce((current, section) => {
-          if (section.element.offsetTop <= activationLine) {
-            return section.id;
-          }
-
-          return current;
-        }, sections[0]?.id ?? "hero") ?? "hero";
-
-      setActiveSection((current) =>
-        current === nextActiveSection ? current : nextActiveSection,
-      );
-    };
-
-    if (sections.length === 0) {
-      return;
-    }
-
-    const syncFromHash = () => {
-      const hash = window.location.hash.replace("#", "");
-
-      if (navItems.some((item) => item.id === hash)) {
-        setActiveSection(hash);
-        return;
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        current = "contact";
       }
-
-      updateActiveSection();
+      setActiveSection(current);
     };
-
     const requestUpdate = () => {
-      if (frameId !== null) {
-        return;
-      }
-
-      frameId = window.requestAnimationFrame(() => {
-        frameId = null;
-        updateActiveSection();
-      });
+      if (!frame) frame = window.requestAnimationFrame(update);
     };
-
-    syncFromHash();
-
+    update();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
-    window.addEventListener("hashchange", syncFromHash);
-
+    window.addEventListener("hashchange", requestUpdate);
     return () => {
-      if (frameId !== null) {
-        window.cancelAnimationFrame(frameId);
-      }
-
+      if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
-      window.removeEventListener("hashchange", syncFromHash);
+      window.removeEventListener("hashchange", requestUpdate);
     };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    mobileNavRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const links = Array.from(mobileNavRef.current?.querySelectorAll("a") ?? []);
+        const first = links[0];
+        const last = links[links.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          menuButtonRef.current?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          menuButtonRef.current?.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  function selectSection(id: string) {
+    setActiveSection(id);
+    setMenuOpen(false);
+    window.requestAnimationFrame(() => document.getElementById(id)?.focus({ preventScroll: true }));
+  }
+
   return (
-    <header ref={headerRef} className="site-nav sticky top-0 z-50">
-      <div className="container-shell flex h-16 items-center justify-between gap-6">
-        <a
-          href="#hero"
-          className="flex flex-col leading-none"
-        >
-          <span className="text-[0.55rem] font-semibold tracking-[0.32em] text-white/45 uppercase">
-            Personal Website
-          </span>
-          <span className="mt-1 text-sm font-semibold tracking-[0.2em] text-white uppercase">
-            Dylan Knapp
-          </span>
-        </a>
-
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-2">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={() => setActiveSection(item.id)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`nav-link ${isActive ? "is-active" : ""}`}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="container-shell header-inner">
+        <a href="#top" className="site-name" onClick={() => { setMenuOpen(false); setActiveSection(""); }}>Dylan Knapp<span className="name-mark" aria-hidden="true">.</span></a>
+        <nav aria-label="Primary navigation" className="desktop-nav">
+          {navItems.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} className={`nav-link ${activeSection === id ? "is-active" : ""}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
+          ))}
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-link nav-resume">Résumé <span aria-hidden="true">↗</span></a>
         </nav>
-
-        <div className="nav-action-group flex items-center gap-2">
-          <a
-            href="/resume.pdf"
-            download
-            className="btn-secondary nav-top-button nav-top-secondary px-4 py-2 text-sm"
-          >
-            Resume
-          </a>
-          <a
-            href="#contact"
-            className="nav-top-button nav-top-primary nav-top-white px-4 py-2 text-sm whitespace-nowrap"
-          >
-            Get in Touch
-          </a>
-        </div>
+        <button ref={menuButtonRef} type="button" className="menu-button" aria-controls="mobile-navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+          <span>{menuOpen ? "Close" : "Menu"}</span>
+          <span className={`menu-icon ${menuOpen ? "is-open" : ""}`} aria-hidden="true"><i /><i /></span>
+        </button>
       </div>
+      <nav id="mobile-navigation" ref={mobileNavRef} aria-label="Mobile navigation" aria-hidden={!menuOpen} inert={!menuOpen} className={`mobile-nav ${menuOpen ? "is-open" : ""}`}>
+        <div className="container-shell mobile-nav-inner">
+          {navItems.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} className={`mobile-nav-link ${activeSection === id ? "is-active" : ""}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => selectSection(id)}>{label} <span aria-hidden="true">↗</span></a>
+          ))}
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="mobile-nav-link mobile-nav-resume" onClick={() => setMenuOpen(false)}>Résumé <span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
     </header>
   );
 }

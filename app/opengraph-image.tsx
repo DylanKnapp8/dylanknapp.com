@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 export const dynamic = "force-static";
-export const alt = "Dylan Knapp - Founder of RepQuest | App Developer";
+export const alt = "Dylan Knapp — developer and founder";
 export const size = {
   width: 1200,
   height: 630,
@@ -17,11 +17,11 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(180deg, #0b0b0b 0%, #050505 100%)",
-          color: "#f5f5f5",
+          background: "#faf9f6",
+          color: "#202522",
           padding: "68px",
           fontFamily: "Inter, sans-serif",
-          border: "1px solid rgba(255,255,255,0.18)",
+          borderTop: "14px solid #285447",
         }}
       >
         <div
@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             fontSize: 24,
             letterSpacing: 6,
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.72)",
+            color: "#285447",
           }}
         >
           Dylan Knapp
@@ -44,10 +44,10 @@ export default function OpenGraphImage() {
               maxWidth: 980,
             }}
           >
-            Founder of RepQuest | App Developer | Student Entrepreneur
+            I build apps and digital products.
           </div>
-          <div style={{ fontSize: 30, color: "rgba(255,255,255,0.72)" }}>
-            Building apps, websites, and digital products with a focus on real users.
+          <div style={{ fontSize: 30, color: "#5f6863" }}>
+            RepQuest · Quoia
           </div>
         </div>
       </div>
